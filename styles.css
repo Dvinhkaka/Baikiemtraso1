@@ -1,0 +1,83 @@
+
+.update-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.update-section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.update-section p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.update-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.update-form input,
+.update-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.update-form textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: #ffc107;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    background-color: #e0a800;
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.success-msg {
+    color: #28a745;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error-msg {
+    color: #dc3545;
+    text-align: center;
+    margin-bottom: 20px;
+}
