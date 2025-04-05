@@ -1,14 +1,33 @@
 <?php
 session_start();
 ?>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = htmlspecialchars($_POST['email']);
+    $password = $_POST['password'];
 
+    if (!empty($email) && !empty($password)) {
+        $valid_email = "test@example.com"; 
+        $valid_password = "123456"; 
+
+        if ($email === $valid_email && $password === $valid_password) {
+            $_SESSION['loggedin'] = true;
+            echo "<p class='success-msg'>Đăng nhập thành công! Chuyển hướng về <a href='index.php'>Trang Chủ</a>.</p>";
+        } else {
+            echo "<p class='error-msg'>Email hoặc mật khẩu không đúng!</p>";
+        }
+    } else {
+        echo "<p class='error-msg'>Vui lòng điền đầy đủ thông tin!</p>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Nhập - Quản Lý Sản Phẩm</title>
-    <link rel="stylesheet" href="/style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
@@ -27,27 +46,6 @@ session_start();
         <h1>Đăng Nhập</h1>
         <p>Vui lòng nhập thông tin để đăng nhập vào hệ thống.</p>
 
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $email = htmlspecialchars($_POST['email']);
-            $password = $_POST['password'];
-
-            if (!empty($email) && !empty($password)) {
-                $valid_email = "test@example.com"; 
-                $valid_password = "123456"; 
-
-                if ($email === $valid_email && $password === $valid_password) {
-                    $_SESSION['loggedin'] = true;
-                    echo "<p class='success-msg'>Đăng nhập thành công! Chuyển hướng về <a href='index.php'>Trang Chủ</a>.</p>";
-                } else {
-                    echo "<p class='error-msg'>Email hoặc mật khẩu không đúng!</p>";
-                }
-            } else {
-                echo "<p class='error-msg'>Vui lòng điền đầy đủ thông tin!</p>";
-            }
-        }
-        ?>
-
         <form method="POST" action="login.php" class="login-form">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
@@ -65,7 +63,7 @@ session_start();
     </main>
 
     <footer class="footer">
-        <p>© <?php echo date("Y"); ?> Quản Lý Sản Phẩm.</p>
+    <p>©2025 <?php echo date("Y"); ?> Technology sales .</p>
     </footer>
 </body>
 </html>

@@ -1,29 +1,32 @@
 <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $fullname = htmlspecialchars($_POST['fullname']);
-            $email = htmlspecialchars($_POST['email']);
-            $password = $_POST['password'];
-            $confirm_password = $_POST['confirm_password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $fullname = htmlspecialchars($_POST['fullname']);
+    $email = htmlspecialchars($_POST['email']);
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
 
-            if (!empty($fullname) && !empty($email) && !empty($password) && !empty($confirm_password)) {
-                if ($password === $confirm_password) {
-                    echo "<p class='success-msg'>Đăng ký thành công! Vui lòng <a href='login.php'>đăng nhập</a>.</p>";
-                } else {
-                    echo "<p class='error-msg'>Mật khẩu và xác nhận mật khẩu không khớp!</p>";
-                }
-            } else {
-                echo "<p class='error-msg'>Vui lòng điền đầy đủ thông tin!</p>";
-            }
+    if (!empty($fullname) && !empty($email) && !empty($password) && !empty($confirm_password)) {
+        if ($password === $confirm_password) {
+            // Set a cookie for successful registration (for 30 days)
+            setcookie('user_email', $email, time() + (30 * 24 * 60 * 60), "/", "", false, true);  // cookie will expire in 30 days
+            echo "<p class='success-msg'>Đăng ký thành công! Vui lòng <a href='login.php'>đăng nhập</a>.</p>";
+        } else {
+            echo "<p class='error-msg'>Mật khẩu và xác nhận mật khẩu không khớp!</p>";
         }
-        ?>
+    } else {
+        echo "<p class='error-msg'>Vui lòng điền đầy đủ thông tin!</p>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký - Quản Lý Sản Phẩm</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
     <nav class="navbar">
         <div class="logo">
             <img src="logo.png" alt="Logo" class="logo-img">
@@ -36,11 +39,11 @@
         </ul>
     </nav>
 
-    <main class="register-section">
+    <main class="login-section"> 
         <h1>Đăng Ký Tài Khoản</h1>
         <p>Vui lòng điền thông tin để tạo tài khoản mới.</p>
 
-        <form method="POST" action="register.php" class="register-form">
+        <form method="POST" action="register.php" class="login-form"> 
             <label for="fullname">Họ tên:</label>
             <input type="text" id="fullname" name="fullname" required>
 
@@ -63,7 +66,7 @@
     </main>
 
     <footer class="footer">
-        <p>© <?php echo date("Y"); ?> Quản Lý Sản Phẩm.</p>
+        <p>©2025 <?php echo date("Y"); ?> Technology sales .</p>
     </footer>
 </body>
 </html>

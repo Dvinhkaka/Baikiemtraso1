@@ -1,10 +1,32 @@
+<?php
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    echo '<a href="logout.php">Đăng Xuất</a>';
+} else {
+    echo '<a href="login.php">Đăng Nhập</a>';
+}
+?>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $subject = htmlspecialchars($_POST['subject']);
+    $message = htmlspecialchars($_POST['message']);
+
+    if (!empty($name) && !empty($email) && !empty($subject) && !empty($message)) {
+        echo "<p class='success-msg'>Cảm ơn bạn, $name! Tin nhắn của bạn đã được gửi thành công.</p>";
+    } else {
+        echo "<p class='error-msg'>Vui lòng điền đầy đủ thông tin!</p>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liên Hệ - Quản Lý Sản Phẩm</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
@@ -17,7 +39,6 @@
             <li><a href="contact.php">Liên Hệ</a></li>
             <li>
                 <?php
-                session_start();
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                     echo '<a href="logout.php">Đăng Xuất</a>';
                 } else {
@@ -28,26 +49,11 @@
         </ul>
     </nav>
 
-    <main class="contact-section">
+    <main class="login-section"> <!-- Dùng class login-section để giống login.php -->
         <h1>Liên Hệ Với Chúng Tôi</h1>
         <p>Vui lòng điền thông tin dưới đây để gửi ý kiến hoặc câu hỏi của bạn!</p>
 
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = htmlspecialchars($_POST['name']);
-            $email = htmlspecialchars($_POST['email']);
-            $subject = htmlspecialchars($_POST['subject']);
-            $message = htmlspecialchars($_POST['message']);
-
-            if (!empty($name) && !empty($email) && !empty($subject) && !empty($message)) {
-                echo "<p class='success-msg'>Cảm ơn bạn, $name! Tin nhắn của bạn đã được gửi thành công.</p>";
-            } else {
-                echo "<p class='error-msg'>Vui lòng điền đầy đủ thông tin!</p>";
-            }
-        }
-        ?>
-
-        <form method="POST" action="contact.php" class="contact-form">
+        <form method="POST" action="contact.php" class="login-form"> <!-- Dùng class login-form -->
             <label for="name">Họ tên:</label>
             <input type="text" id="name" name="name" required>
 
@@ -65,7 +71,7 @@
     </main>
 
     <footer class="footer">
-        <p>© <?php echo date("Y"); ?> Quản Lý Sản Phẩm.</p>
+    <p>©<?php echo date("Y"); ?> Technology sales.</p>
     </footer>
 </body>
 </html>

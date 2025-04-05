@@ -1,10 +1,22 @@
+<?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $email = htmlspecialchars($_POST['email']);
+
+            
+            if (!empty($email)) {
+                echo "<p class='success-msg'>Yêu cầu reset mật khẩu đã được gửi đến $email. Vui lòng kiểm tra hộp thư của bạn!</p>";
+            } else {
+                echo "<p class='error-msg'>Vui lòng nhập email!</p>";
+            }
+        }
+        ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Mật Khẩu - Quản Lý Sản Phẩm</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
@@ -23,18 +35,7 @@
         <h1>Reset Mật Khẩu</h1>
         <p>Nhập email của bạn để nhận hướng dẫn reset mật khẩu.</p>
 
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $email = htmlspecialchars($_POST['email']);
-
-            
-            if (!empty($email)) {
-                echo "<p class='success-msg'>Yêu cầu reset mật khẩu đã được gửi đến $email. Vui lòng kiểm tra hộp thư của bạn!</p>";
-            } else {
-                echo "<p class='error-msg'>Vui lòng nhập email!</p>";
-            }
-        }
-        ?>
+        
 
         <form method="POST" action="reset_password.php" class="reset-form">
             <label for="email">Email:</label>
@@ -49,7 +50,7 @@
     </main>
 
     <footer class="footer">
-        <p>© <?php echo date("Y"); ?> Quản Lý Sản Phẩm.</p>
+    <p>©<?php echo date("Y"); ?> Technology sales.</p>
     </footer>
 </body>
 </html>
