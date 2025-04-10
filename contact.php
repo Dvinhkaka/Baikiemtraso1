@@ -49,11 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </nav>
 
-    <main class="login-section"> <!-- Dùng class login-section để giống login.php -->
+    <main class="login-section"> 
         <h1>Liên Hệ Với Chúng Tôi</h1>
         <p>Vui lòng điền thông tin dưới đây để gửi ý kiến hoặc câu hỏi của bạn!</p>
 
-        <form method="POST" action="contact.php" class="login-form"> <!-- Dùng class login-form -->
+        <form method="POST" action="contact.php" class="login-form"> 
             <label for="name">Họ tên:</label>
             <input type="text" id="name" name="name" required>
 
