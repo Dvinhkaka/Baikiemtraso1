@@ -1,73 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.update-section {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #111a9e);
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
+    color: #e94560;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #1a1a2e, #16213e, #1b53bb);
+    padding: 15px 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-img {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #e94560;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    background-color: rgba(233, 69, 96, 0.2);
+    border-radius: 20px;
+}
+
+.intro-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.intro-section h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #e94560;
+}
+
+.intro-section h2 {
+    margin-top: 30px;
+    color: #e94560;
+}
+
+.intro-section p {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.update-section h1 {
-    text-align: center;
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: #e94560;
+}
+
+.faq-item {
     margin-bottom: 20px;
 }
 
-.update-section p {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #555;
+.faq-item h3 {
+    color: #e94560;
+    margin-bottom: 10px;
 }
 
-.update-form {
+/* CSS cho form liên hệ */
+.contact-form-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #e94560;
+}
+
+.contact-form {
     display: flex;
     flex-direction: column;
 }
 
-.update-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
+.contact-form label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #fff;
 }
 
-.update-form input,
-.update-form textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1em;
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: box-shadow 0.3s ease;
 }
 
-.update-form textarea {
-    resize: vertical;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 5px rgba(233, 69, 96, 0.5);
+    outline: none;
 }
 
 .btn-submit {
-    background-color: #ffc107;
-    color: black;
-    padding: 10px;
+    padding: 12px;
+    background: linear-gradient(45deg, #e94560, #0f3460);
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-submit:hover {
-    background-color: #e0a800;
-}
-
-.links {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.links a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.links a:hover {
-    text-decoration: underline;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.7), 0 0 30px rgba(233, 69, 96, 0.5);
 }
 
 .success-msg {
@@ -80,4 +181,24 @@
     color: #dc3545;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #0f3460, #16213e, #1a1a2e);
+    color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }

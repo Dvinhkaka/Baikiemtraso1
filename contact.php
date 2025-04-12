@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </main>
 
     <footer class="footer">
-    <p>©<?php echo date("Y"); ?> Technology sales.</p>
+    <p>©2025 <?php echo date("Y"); ?> Technology sales.</p>
     </footer>
 </body>
 </html>

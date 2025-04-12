@@ -7,9 +7,9 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #1a1a2e, #16213e, #0347ad); 
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #111a9e);
     background-size: 300% 300%;
-    animation: gradientMove 10s ease infinite; 
+    animation: gradientMove 10s ease infinite;
     color: #e94560;
 }
 
@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(90deg, #1a1a2e, #16213e, #123e74); 
+    background: linear-gradient(90deg, #1a1a2e, #16213e, #1b53bb);
     padding: 15px 25px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -42,7 +42,7 @@ body {
 }
 
 .nav-links a {
-    color: #e94560; 
+    color: #e94560;
     text-decoration: none;
     font-weight: 500;
     font-size: 1em;
@@ -52,112 +52,105 @@ body {
 
 .nav-links a:hover {
     color: #fff;
-    background-color: rgba(233, 69, 96, 0.2); 
+    background-color: rgba(233, 69, 96, 0.2);
     border-radius: 20px;
 }
 
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 140px);
-    text-align: center;
-}
-.intro h1 {
-    font-size: 2.8em;
-    margin-bottom: 20px;
-    color: #e94560; 
-}
-
-.intro p {
-    font-size: 1.2em;
-    margin-bottom: 35px;
-    color: #fff; 
-    max-width: 650px;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.btn {
-    padding: 14px 35px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn-register {
-    background: linear-gradient(45deg, #e94560, #0f3460);
-    color: white;
-}
-
-.btn-register:hover {
-    background: linear-gradient(45deg, #57bcff); 
-    box-shadow: 0 0 20px rgba(233, 69, 96, 0.7), 0 0 30px rgba(233, 69, 96, 0.5);
-}
-
-.btn-login {
-    background: linear-gradient(45deg, #e94560, #0f3460);
-    color: white;
-}
-
-.btn-login:hover {
-    background: linear-gradient(45deg, #57bcff); 
-    color: white;
-    box-shadow: 0 0 20px rgba(233, 69, 96, 0.7), 0 0 30px rgba(233, 69, 96, 0.5);
-}
-
-.login-section {
-    max-width: 450px;
+.intro-section {
+    max-width: 800px;
     margin: 60px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.intro-section h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #e94560;
+}
+
+.intro-section h2 {
+    margin-top: 30px;
+    color: #e94560;
+}
+
+.intro-section p {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: #e94560;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    color: #e94560;
+    margin-bottom: 10px;
+}
+
+/* CSS cho form liên hệ */
+.contact-form-section {
+    max-width: 600px;
+    margin: 40px auto;
     padding: 30px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.login-section h1 {
+.contact-form-section h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: #e94560; 
+    color: #e94560;
 }
 
-.login-section p {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #fff;
-}
-
-.login-form {
+.contact-form {
     display: flex;
     flex-direction: column;
 }
 
-.login-form label {
+.contact-form label {
     margin-bottom: 8px;
     font-weight: 500;
     color: #fff;
 }
 
-.login-form input,
-.login-form textarea {
+.contact-form input,
+.contact-form textarea {
     padding: 12px;
     margin-bottom: 20px;
     border: none;
     border-radius: 6px;
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 0.8);
     transition: box-shadow 0.3s ease;
 }
 
-.login-form input:focus,
-.login-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     box-shadow: 0 0 5px rgba(233, 69, 96, 0.5);
     outline: none;
 }
@@ -178,34 +171,6 @@ body {
     box-shadow: 0 0 20px rgba(233, 69, 96, 0.7), 0 0 30px rgba(233, 69, 96, 0.5);
 }
 
-
-.links {
-    text-align: center;
-    margin-top: 25px;
-}
-
-.links a {
-    color: #e94560; 
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.links a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(90deg, #0f3460, #16213e, #1a1a2e); 
-    color: #fff;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-}
-
-
 .success-msg {
     color: #28a745;
     text-align: center;
@@ -216,6 +181,14 @@ body {
     color: #dc3545;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #0f3460, #16213e, #1a1a2e);
+    color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes gradientMove {

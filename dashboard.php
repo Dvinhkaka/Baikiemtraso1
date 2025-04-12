@@ -18,7 +18,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Logo" class="logo-img">
+            <img src="./logo.png" alt="Logo" class="logo-img">
         </div>
         <ul class="nav-links">
             <li><a href="index.php">Trang Chủ</a></li>

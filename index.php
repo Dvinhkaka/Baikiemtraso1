@@ -26,7 +26,7 @@ session_start();
             <li><a href="index.php">Trang Chủ</a></li>
             <li><a href="products/index.php">Sản phẩm</a></li>
             <li><a href="contact.php">Liên Hệ</a></li>
-            <li>
+            <li><a href="about.php">Giới Thiệu</a></li>
                 
             </li>
         </ul>
